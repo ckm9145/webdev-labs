@@ -1,54 +1,44 @@
-import React from 'react';
-
-import {getHeaders} from './utils';
-import Post from './Post';
-
+import React from "react";
+import { getHeaders } from "./utils";
+import Post from "./Post";
 
 class Posts extends React.Component {
-  
-    constructor(props) {
-        super(props);
-        this.state = {
-            posts: []
-        }
+	constructor(props) {
+		super(props);
+		this.state = {
+			posts: [],
+		};
 
-        this.getPostsFromServer()
-        // initialization code here
-    }
+		this.getPostsFromServer();
+		// initialization code here
+	}
 
-    getPostsFromServer () {
-        fetch('/api/posts', {
+	getPostsFromServer() {
+		fetch("/api/posts", {
+			headers: getHeaders(),
+		})
+			.then((response) => response.json())
+			.then((data) => {
+				console.log(data);
+				this.setState({
+					posts: data,
+				});
+			});
+	}
 
-            headers: getHeaders()
-        }).then(response => response.json())
-        .then(data => {
-            console.log(data);
-            this.setState({
-                posts: data
-            })
-        })
-    }
+	componentDidMount() {
+		// fetch posts and then set the state...
+	}
 
-    componentDidMount() {
-        // fetch posts and then set the state...
-    }
-
-     render () {
-         return (<div id="posts">
-                {
-                    this.state.posts.map(post => {
-                        return (
-                            <Post 
-                            key={'post_' + post.id}
-                            model={post} />
-                        )
-                    })
-                }
-     
-            </div>
-
-        )
-    }
+	render() {
+		return (
+			<div id="posts">
+				{this.state.posts.map((post) => {
+					return <Post key={"post_" + post.id} model={post} />;
+				})}
+			</div>
+		);
+	}
 }
 
-export default Posts; 
+export default Posts;

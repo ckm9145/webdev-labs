@@ -209,7 +209,7 @@ main {
     letter-spacing: 0px;
 }
 
-.suggestions section {
+/* .suggestions section {
     display: grid;
     grid-template-columns: 35px 2fr 1fr;
     align-items: center;
@@ -241,7 +241,58 @@ main {
     min-height: 30px;
     border: solid 1px #dbdbdb;
     border-radius: 15px;
+} */
+
+
+
+
+#suggestions {
+    width: 350px;
+    background-color: #f2f2f2;
+    padding: 5px;
 }
+
+
+.suggestion {
+    display: grid;
+    grid-template-columns: 50px auto 70px;
+    align-items: center;
+
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.suggestion p {
+    margin: 0;
+}
+
+.suggestion img {
+    border-radius: 15px;
+}
+
+.suggestion .username {
+    font-weight: bold;
+    color: #555;
+}
+
+.suggestion .suggestion-text {
+    font-size: 0.9em;
+    color: #555;
+}
+
+
+.suggestion button {
+    
+    padding: 5px 10px;
+    border: 1px;
+    border-color: #999;
+    border-radius: 4px;
+}
+
+
+
+
+
 aside header > div {
     display: flex;
     align-items: center;

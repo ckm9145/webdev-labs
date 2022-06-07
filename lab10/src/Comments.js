@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { getHeaders } from "./utils";
 
 function Comments(props) {
 	let post = props.post;
 	const [newComment, setNewComment] = useState("");
+    const commentRef = useRef(null)
 
 	function ExistingComments() {
 		if (post.comments.length > 1) {
@@ -55,10 +56,17 @@ function Comments(props) {
 				console.log(data);
 				setNewComment("");
 				props.refreshPost();
+                commentRef.current.focus();
 			});
 
 		//clear input after submission
 	};
+
+    const handleKeyDown = e => {
+        if (e.key === 'Enter') {
+            addComment(e)
+        }
+    }
 
 	return (
 		<div>
@@ -69,7 +77,9 @@ function Comments(props) {
 					value={newComment}
 					placeholder="Add a comment ..."
 					type="text"
+                    ref={commentRef}
 					onChange={(e) => setNewComment(e.target.value)}
+                    onKeyDown={handleKeyDown}
 				/>
 				<input value="Post" type="submit" />
 			</form>

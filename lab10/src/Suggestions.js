@@ -37,13 +37,13 @@ class Suggestions extends React.Component {
             <div id="suggestions">
                     <p className="suggestion-text">Suggestions for you</p>
                     <div>
-                    Suggestions123
                     {
                         this.state.suggestions.map(suggestion => {
                             return (
                                 <Suggestion 
                                 key={'suggestion_' + suggestion.id}
                                 model={suggestion} />
+                                
                             )
                         })
                     }

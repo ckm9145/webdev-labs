@@ -3,8 +3,6 @@ import FollowButton from './FollowButton';
 import { getHeaders } from './utils';
 
 
-
-
 class Suggestion extends React.Component {
 
     constructor(props) {
@@ -33,10 +31,9 @@ class Suggestion extends React.Component {
                 <p className="username">{suggestion.username}</p>
                 <p className="suggestion-txt">Suggested for you</p>
             </div>
-            <FollowButton 
-                
-                followingId={suggestion.user_id}
-                // postId={suggestion.}
+            <FollowButton
+            
+                userId= {suggestion.id}
                 refreshFollow={this.getSuggestionsFromServer}/>
 
         </div>

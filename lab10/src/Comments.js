@@ -70,10 +70,17 @@ function Comments(props) {
 
 	return (
 		<div>
+			
 			<hr />
 			<ExistingComments />
 			<form onSubmit={addComment}>
-				<input
+			<div className="timestamp">
+            		<p><b> {post.display_time}</b> </p>
+            </div>
+				<i className="far fa-smile"></i>
+				
+
+				<input className="formatInput"
 					value={newComment}
 					placeholder="Add a comment ..."
 					type="text"
@@ -81,8 +88,11 @@ function Comments(props) {
 					onChange={(e) => setNewComment(e.target.value)}
                     onKeyDown={handleKeyDown}
 				/>
+				
 				<input value="Post" type="submit" />
 			</form>
+
+			
 		</div>
 	);
 }

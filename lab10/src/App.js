@@ -51,7 +51,7 @@ class App extends React.Component {
                     photo = {this.state.user.image_url}
                     username= {this.state.user.username}
                 />
-                <Suggestions />
+                {/* <Suggestions /> */}
             </aside>
 
             <main className="content">

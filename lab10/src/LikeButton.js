@@ -25,7 +25,7 @@ class LikeButton extends React.Component {
 	}
 
 	createLike() {
-		const url = "/api/posts/likes";
+		const url = "https://photo-app-secured.herokuapp.com/api/posts/likes";
 		console.log("create like", url);
 
 		const postData = {
@@ -45,7 +45,7 @@ class LikeButton extends React.Component {
 	}
 
 	removeLike() {
-		const url = "/api/posts/likes/" + this.props.likeId;
+		const url = "https://photo-app-secured.herokuapp.com/api/posts/likes/" + this.props.likeId;
 		console.log("remove like", url);
 
 		fetch(url, {

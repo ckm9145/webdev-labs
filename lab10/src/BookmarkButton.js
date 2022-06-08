@@ -25,7 +25,7 @@ class BookmarkButton extends React.Component {
 	}
 
 	createBookmark() {
-		const url = "/api/bookmarks";
+		const url = "https://photo-app-secured.herokuapp.com/api/bookmarks";
 		console.log("create Bookmark", url);
 
 		const postData = {
@@ -45,7 +45,7 @@ class BookmarkButton extends React.Component {
 	}
 
 	removeBookmark() {
-		const url = "/api/bookmarks/" + this.props.bookmarkId;
+		const url = "https://photo-app-secured.herokuapp.com/api/bookmarks/" + this.props.bookmarkId;
 		console.log("remove Bookmark", url);
 
 		fetch(url, {

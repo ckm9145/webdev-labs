@@ -46,7 +46,7 @@ function Comments(props) {
 			text: newComment,
 		};
 
-		fetch("/api/comments", {
+		fetch("https://photo-app-secured.herokuapp.com/api/comments", {
 			method: "POST",
 			headers: getHeaders(),
 			body: JSON.stringify(postData),

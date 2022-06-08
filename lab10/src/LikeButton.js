@@ -68,6 +68,11 @@ class LikeButton extends React.Component {
 			<i
 				className={heartClass}
 				onClick={this.toggleLike}
+				onKeyDown={(e) => {
+					if (e.key ==="Enter"){
+						this.toggleLike();
+					}
+				}}
 				aria-label="like / unlike"
 				tabIndex={0}
 			></i>

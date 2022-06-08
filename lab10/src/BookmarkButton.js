@@ -67,6 +67,11 @@ class BookmarkButton extends React.Component {
 			<i
 				className={bookmarkClass}
 				onClick={this.toggleBookmark}
+				onKeyDown={(e) => {
+					if (e.key ==="Enter"){
+						this.toggleBookmark();
+					}
+				}}
 				aria-label="bookmark / unbookmark"
 				tabIndex={0}
 			></i>

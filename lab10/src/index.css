@@ -439,6 +439,43 @@ button.like, button.bookmark {
 }
 
 
+.card-header {
+    width: auto;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+
+    font-size: x-large;
+    font-family: 'Comfortaa', cursive;
+
+}
+
+.formatInput {
+    width: 88%;
+    
+
+}
+
+.follow {
+
+    background: transparent;
+
+}
+
+.unfollow {
+
+    background: white;
+
+}
+
+.timestamp p {
+    margin: 0;
+    font-size: small;
+}
+
 
 @media (max-width: 900px) {
     aside {

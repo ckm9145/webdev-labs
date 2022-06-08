@@ -56,7 +56,6 @@ class App extends React.Component {
 
             <main className="content">
                 
-                {/* TODO: REPLACE WITH REACT COMPONENT */}
                 <Stories />
                 <Posts />
             </main>

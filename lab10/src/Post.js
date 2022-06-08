@@ -39,6 +39,10 @@ class Post extends React.Component {
 		return (
 			<div className="card">
 				{/* key={'post_' + post.id}> */}
+				<div className="card-header">
+					<b>{post.user.username}</b>
+					<i className="fas fa-ellipsis-h"></i>
+				</div>
 				<img src={post.image_url} />
 				<LikeButton
 					likeId={post.current_user_like_id}
@@ -51,8 +55,8 @@ class Post extends React.Component {
 					postId={post.id}
 					refreshPost={this.refreshPostDataFromServer}
 				/>
-
-				<p>{post.caption}</p>
+				
+				<p><b>{post.user.username}</b> {post.caption}</p>
 
 				<Comments
 					post={post}

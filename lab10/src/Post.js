@@ -43,20 +43,28 @@ class Post extends React.Component {
 					<b>{post.user.username}</b>
 					<i className="fas fa-ellipsis-h"></i>
 				</div>
-				<img src={post.image_url} />
-				<LikeButton
-					likeId={post.current_user_like_id}
-					postId={post.id}
-					refreshPost={this.refreshPostDataFromServer}
-				/>
+				<img src={post.image_url} alt="post" />
+				<div className="card-icons">
+					<div>
+						<LikeButton
+							likeId={post.current_user_like_id}
+							postId={post.id}
+							refreshPost={this.refreshPostDataFromServer}
+						/>
+						<i className="far fa-comment"></i>
+						<i className="far fa-paper-plane"></i>
+					</div>
 
-				<BookmarkButton
-					bookmarkId={post.current_user_bookmark_id}
-					postId={post.id}
-					refreshPost={this.refreshPostDataFromServer}
-				/>
-				
-				<p><b>{post.user.username}</b> {post.caption}</p>
+					<BookmarkButton
+						bookmarkId={post.current_user_bookmark_id}
+						postId={post.id}
+						refreshPost={this.refreshPostDataFromServer}
+					/>
+				</div>
+
+				<p>
+					<b>{post.user.username}</b> {post.caption}
+				</p>
 
 				<Comments
 					post={post}

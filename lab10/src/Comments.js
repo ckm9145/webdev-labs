@@ -4,7 +4,7 @@ import { getHeaders } from "./utils";
 function Comments(props) {
 	let post = props.post;
 	const [newComment, setNewComment] = useState("");
-    const commentRef = useRef(null)
+	const commentRef = useRef(null);
 
 	function ExistingComments() {
 		if (post.comments.length > 1) {
@@ -56,43 +56,41 @@ function Comments(props) {
 				console.log(data);
 				setNewComment("");
 				props.refreshPost();
-                commentRef.current.focus();
+				commentRef.current.focus();
 			});
 
 		//clear input after submission
 	};
 
-    const handleKeyDown = e => {
-        if (e.key === 'Enter') {
-            addComment(e)
-        }
-    }
+	const handleKeyDown = (e) => {
+		if (e.key === "Enter") {
+			addComment(e);
+		}
+	};
 
 	return (
 		<div>
-			
-			<hr />
 			<ExistingComments />
 			<form onSubmit={addComment}>
-			<div className="timestamp">
-            		<p><b> {post.display_time}</b> </p>
-            </div>
+				<div className="timestamp">
+					<p>
+						<b> {post.display_time}</b>{" "}
+					</p>
+				</div>
 				<i className="far fa-smile"></i>
-				
 
-				<input className="formatInput"
+				<input
+					className="formatInput"
 					value={newComment}
 					placeholder="Add a comment ..."
 					type="text"
-                    ref={commentRef}
+					ref={commentRef}
 					onChange={(e) => setNewComment(e.target.value)}
-                    onKeyDown={handleKeyDown}
+					onKeyDown={handleKeyDown}
 				/>
-				
+
 				<input value="Post" type="submit" />
 			</form>
-
-			
 		</div>
 	);
 }

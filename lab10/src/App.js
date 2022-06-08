@@ -1,16 +1,11 @@
 import React from "react";
-
 import Posts from "./Posts";
 import Stories from "./Stories";
 import Suggestions from "./Suggestions";
 import Profile from "./Profile";
 import NavBar from "./NavBar";
-
 import { getHeaders } from "./utils";
 
-{
-	/* TODO: Break up the HTML below into a series of React components. */
-}
 class App extends React.Component {
 	constructor(props) {
 		super(props);

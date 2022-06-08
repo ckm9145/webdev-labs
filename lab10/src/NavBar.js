@@ -17,11 +17,11 @@ class NavBar extends React.Component {
 				<h1>{this.props.title}</h1>
 				<ul>
 					<li>
-						<a>API Docs</a>
+						<a href="/api">API Docs</a>
 					</li>
 					<li>{this.props.username}</li>
 					<li>
-						<a>Sign Out</a>
+						<a href="login">Sign Out</a>
 					</li>
 				</ul>
 			</nav>
